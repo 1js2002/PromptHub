@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import CalloutCard from "@components/CalloutCard";
 const PromptGpt = ({ params }) => {
-  console.log("params===>", params);
+ 
   const { data: session, status } = useSession();
 
   if (status === "unauthenticated") {
@@ -14,10 +14,10 @@ const PromptGpt = ({ params }) => {
   }
   // Decode the URL component
   const { prompt } = params;
-  console.log("Encoded Prompt:", prompt);
+
 
   const decodedPrompt = decodeURIComponent(prompt);
-  console.log("Decoded Prompt:", decodedPrompt);
+
 
   //const encodedPrompt = encodeURIComponent(originalPrompt);
   // Construct the URL with encodedPrompt
