@@ -1,26 +1,19 @@
 "use client";
 import React from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import CalloutCard from "@components/CalloutCard";
 const PromptGpt = ({ params }) => {
- 
+  const { prompt } = params;
   const { data: session, status } = useSession();
 
   if (status === "unauthenticated") {
     return <p>Access Denied. Please signin to continue!</p>;
   }
   // Decode the URL component
-  const { prompt } = params;
-
-
   const decodedPrompt = decodeURIComponent(prompt);
-
-
-  //const encodedPrompt = encodeURIComponent(originalPrompt);
-  // Construct the URL with encodedPrompt
 
   const [copied, setCopied] = useState("");
   const [promptInput, setPromptInput] = useState("");
@@ -41,13 +34,9 @@ const PromptGpt = ({ params }) => {
           },
         }
       );
-  
-      // Use useEffect to handle state update after API call
-      useEffect(() => {
-        setContent(response.data);
-        console.log("cotent====>", response.data);
-      }, [response.data]);
-  
+      console.log("response===>", response.data);
+      setContent(response.data);
+      console.log("content====>", content);
       // Rest of your code handling the response
     } catch (error) {
       console.error("Error:", error);
