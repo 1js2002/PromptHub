@@ -14,7 +14,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const [copied, setCopied] = useState("");
 
   const handleProfileClick = () => {
-    console.log(post);
+  
 
     if (post.creator._id === session?.user.id) return router.push("/profile");
 
@@ -29,7 +29,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   const promptGpt = () => { 
-    console.log("promptGpt:: ", post.prompt); 
+ 
     router.push(`/prompt-gpt/${post.prompt}`); 
   }
   return (
