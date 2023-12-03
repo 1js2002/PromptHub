@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import CalloutCard from "@components/CalloutCard";
