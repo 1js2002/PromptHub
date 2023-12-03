@@ -34,9 +34,9 @@ const PromptGpt = ({ params }) => {
           },
         }
       );
-      console.log("response===>", response.data);
+      
       setContent(response.data);
-      console.log("content====>", content);
+    
       // Rest of your code handling the response
     } catch (error) {
       console.error("Error:", error);
