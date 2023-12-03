@@ -10,7 +10,7 @@ export async function POST(request) {
       messages: [
         {
           role: "system",
-          content: `give me some good 100-150 word result of this prompt ${prompt} `,
+          content: `give me some good 55-100 word result of this prompt ${prompt} `,
         },
       ],
     });
@@ -20,6 +20,7 @@ export async function POST(request) {
   } catch (err) {
     console.log("err=>>", err);
     // If an error occurs, return an appropriate response
+    console.log
     return NextResponse.error("Internal Server Error", { status: 500 });
   }
 }
